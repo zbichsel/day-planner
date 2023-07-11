@@ -26,7 +26,7 @@ $(function () {
 
   var today = dayjs();
   $('#currentDay').text(today.format('MMM D, YYYY'));
-  var currentTime = dayjs().format('H');
+  var currentTime = dayjs().format('HH');
   // var farben = $('.description');
   $('.time-block').each(function () {
     
