@@ -11,11 +11,11 @@
 //
 $(function () {
 
-$('.saveBtn').on('click', function () {
-  var key = $(this).parent().attr('id').split('-')[1];
-  var value = $(this).parent().find('.description').val();
-  localStorage.setItem(key, value);
-});
+  $('.saveBtn').on('click', function () {
+    var key = $(this).parent().attr('id').split('-')[1];
+    var value = $(this).parent().find('.description').val();
+    localStorage.setItem(key, value);
+  });
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -24,13 +24,15 @@ $('.saveBtn').on('click', function () {
   // current hour in 24-hour time?
   //
 
+  var today = dayjs();
+  $('#currentDay').text(today.format('MMM D, YYYY'));
   var currentTime = dayjs().format('H');
   // var farben = $('.description');
   $('.time-block').each(function () {
-
-
+    
+    
     var timeBlkId = $(this).attr('id').split('-')[1];
-
+    
     if (timeBlkId < currentTime) {
       $(this).find('.description').addClass('past');
     } else if (timeBlkId === currentTime) {
@@ -39,7 +41,7 @@ $('.saveBtn').on('click', function () {
       $(this).find('.description').addClass('future');
     }
   })
-
+  
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
