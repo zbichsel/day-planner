@@ -15,7 +15,7 @@ This color-coded **day planner** web application uses JavaScript code to turn th
 
 ## Screenshot
 
-![Screenshot]()
+![Screenshot](./assets/images/day-planner.png)
 
 ## Links
 
